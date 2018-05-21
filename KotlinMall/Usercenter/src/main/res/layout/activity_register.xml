@@ -26,12 +26,12 @@
 
             <View style="@style/DividerFixedWidth.MarginTopBottom" />
 
-            <!--<com.kotlin.base.widgets.VerifyButton-->
-                <!--android:id="@+id/mVerifyCodeBtn"-->
-                <!--style="@style/WrapMatch"-->
-                <!--android:background="@null"-->
-                <!--android:text="获取验证码"-->
-                <!--android:textColor="@color/common_blue" />-->
+            <com.kotlin.base.widgets.VerifyButton
+                android:id="@+id/mVerifyCodeBtn"
+                style="@style/WrapMatch"
+                android:background="@null"
+                android:text="获取验证码"
+                android:textColor="@color/common_blue" />
         </LinearLayout>
 
         <View style="@style/DividerFixedHeight" />
@@ -75,7 +75,6 @@
     </LinearLayout>
 
     <Button
-        android:enabled="true"
         android:id="@+id/mRegisterBtn"
         style="@style/FullBtnStyle"
         android:text="注册" />

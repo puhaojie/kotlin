@@ -1,7 +1,6 @@
-package com.kotlin.base.ui.activity
+package com.kotlin.base.ui.fragment
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import com.kotlin.base.common.BaseApplication
 import com.kotlin.base.injection.component.ActivityComponent
 import com.kotlin.base.injection.component.DaggerActivityComponent
@@ -9,17 +8,16 @@ import com.kotlin.base.injection.module.ActivityModule
 import com.kotlin.base.injection.module.LifecycleProviderModule
 import com.kotlin.base.presenter.BasePresenter
 import com.kotlin.base.presenter.view.BaseView
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.support.v4.toast
 import javax.inject.Inject
-
 
 /**
  * created by phj at 2018-05-20
- * 简介：基础的基于MVP的Activity
+ * 简介：基础的基于MVP的Fragment
  */
 
 
-abstract class BaseMvpActivity<Presenter : BasePresenter<*>>: BaseActivity(),BaseView {
+abstract class BaseMvpFragment<Presenter : BasePresenter<*>>: BaseFragment(), BaseView {
 
     @Inject
     lateinit var mPresenter : Presenter
@@ -37,9 +35,9 @@ abstract class BaseMvpActivity<Presenter : BasePresenter<*>>: BaseActivity(),Bas
 
     private fun initActivityInjection() {
         activityComponent = DaggerActivityComponent.builder()
-                .appComponent((application as BaseApplication).appComponent)
+                .appComponent((activity!!.application as BaseApplication).appComponent)
                 .lifecycleProviderModule(LifecycleProviderModule(this))
-                .activityModule(ActivityModule(this))
+                .activityModule(ActivityModule(activity!!))
                 .build()
 
     }
