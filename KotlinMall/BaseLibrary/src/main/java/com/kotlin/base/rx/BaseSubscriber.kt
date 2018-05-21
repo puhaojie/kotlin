@@ -13,11 +13,12 @@ open class BaseSubscriber<T>(private val mView : BaseView) : Subscriber<T>() {
     }
 
     override fun onCompleted() {
-
+        mView.hideLoading()
     }
 
     override fun onError(e: Throwable) {
         if (e is BaseException)
             mView.onError(e.msg)
+        mView.hideLoading()
     }
 }

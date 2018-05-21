@@ -19,6 +19,9 @@ class RegisterPresenter @Inject constructor(): BasePresenter<RegisterView>() {
     lateinit var userService  : UserService
 
     fun register(mobile:String,pwd:String,verifyCode:String){
+        if (!checkNetWork())
+            return
+        mView.showLoading()
         userService.register(mobile, pwd, verifyCode)
                 .execute(object : BaseSubscriber<Boolean>(mView){
                     override fun onNext(t: Boolean) {
@@ -26,20 +29,6 @@ class RegisterPresenter @Inject constructor(): BasePresenter<RegisterView>() {
                             mView.onRegisterResult("注册成功")
                     }
                 },lifecycleProvider)
-//                .observeOn(Schedulers.io())
-//                .subscribeOn(AndroidSchedulers.mainThread())
-//                .subscribe( object :Subscriber<Boolean>() {
-//                    override fun onCompleted() {
-//
-//                    }
-//
-//                    override fun onError(e: Throwable?) {
-//                    }
-//
-//                    override fun onNext(t: Boolean?) {
-//                        mView.onRegisterResult(mobile+pwd+verifyCode)
-//                    }
-//                })
 
     }
 
