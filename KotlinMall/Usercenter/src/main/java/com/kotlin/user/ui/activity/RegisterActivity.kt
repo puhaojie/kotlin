@@ -13,14 +13,17 @@ import com.kotlin.user.presenter.view.RegisterView
 import kotlinx.android.synthetic.main.activity_register.*
 import org.jetbrains.anko.toast
 
+/**
+ * Created by phj on 2018/5/22.
+ * 描述：注册界面
+ */
+
 class RegisterActivity : BaseMvpActivity<RegisterPresenter>() , RegisterView,View.OnClickListener{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         initView()
-
-
     }
 
     override fun injectComponent() {
