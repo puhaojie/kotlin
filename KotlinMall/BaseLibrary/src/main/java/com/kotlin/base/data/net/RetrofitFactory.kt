@@ -35,7 +35,7 @@ class RetrofitFactory private constructor() {
                     .newBuilder()
                     .addHeader("Content-Type","application/json")
                     .addHeader("charset","utf-8")
-//                    .addHeader("token", AppPrefsUtils.getString(BaseConstant.KEY_SP_TOKEN))
+                    .addHeader("token", AppPrefsUtils.getString(BaseConstant.KEY_SP_TOKEN))
                     .build()
             chain.proceed(request)
         }

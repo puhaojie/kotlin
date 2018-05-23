@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kotlin.user">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application>
         <activity android:name=".ui.activity.RegisterActivity"/>
 
@@ -11,6 +13,7 @@
 
         <activity android:name=".ui.activity.ResetPwdActivity"/>
 
+        <activity android:name=".ui.activity.UserInfoActivity"/>
     </application>
 
 </manifest>
