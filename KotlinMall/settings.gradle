@@ -1,1 +1,1 @@
-include ':app', ':BaseLibrary', ':Provider', ':Usercenter', ':MessageCenter'
+include ':app', ':BaseLibrary', ':Provider', ':Usercenter', ':MessageCenter', ':GoodsCenter'

@@ -25,6 +25,11 @@ class BaseApplication : Application() {
         super.onCreate()
         context = this
         initAppInjection()
+
+        //ARouter初始化
+//        ARouter.openLog()    // 打印日志
+//        ARouter.openDebug()
+//        ARouter.init(this)
     }
 
     private fun initAppInjection() {

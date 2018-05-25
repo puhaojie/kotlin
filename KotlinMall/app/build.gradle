@@ -36,6 +36,7 @@ dependencies {
         implementation project(':Usercenter')
     }
     implementation project(':MessageCenter')
+    implementation project(':GoodsCenter')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 repositories {
