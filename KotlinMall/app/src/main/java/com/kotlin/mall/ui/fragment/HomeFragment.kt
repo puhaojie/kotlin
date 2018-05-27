@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.kotlin.base.ext.onClick
 import com.kotlin.base.ui.fragment.BaseFragment
 import com.kotlin.base.widgets.BannerImageLoader
+import com.kotlin.goods.ui.activity.SearchGoodsActivity
 import com.kotlin.mall.R
 import com.kotlin.mall.common.*
 import com.kotlin.mall.ui.adapter.HomeDiscountAdapter
@@ -16,6 +17,7 @@ import com.youth.banner.BannerConfig
 import com.youth.banner.Transformer
 import kotlinx.android.synthetic.main.fragment_home.*
 import me.crosswall.lib.coverflow.CoverFlow
+import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
 
 /**
@@ -41,7 +43,7 @@ class HomeFragment : BaseFragment() {
 
     private fun initView() {
         mSearchEt.onClick {
-            //            startActivity<SearchGoodsActivity>()
+            startActivity<SearchGoodsActivity>()
         }
 
         mScanIv.onClick {
