@@ -17,6 +17,7 @@ import com.kotlin.goods.presenter.GoodsListPresenter
 import com.kotlin.goods.presenter.view.GoodsListView
 import com.kotlin.goods.ui.adapter.GoodsAdapter
 import kotlinx.android.synthetic.main.activity_goods.*
+import org.jetbrains.anko.startActivity
 
 /**
  * Created by phj on 20:18.
@@ -46,7 +47,7 @@ class GoodsActivity  : BaseMvpActivity<GoodsListPresenter>(), GoodsListView, BGA
 
         mGoodsAdapter.setOnItemClickListener(object : BaseRecyclerViewAdapter.OnItemClickListener<Goods> {
             override fun onItemClick(item: Goods, position: Int) {
-//                startActivity<GoodsDetailActivity>(GoodsConstant.KEY_GOODS_ID to item.id)
+                startActivity<GoodsDetailActivity>(GoodsConstant.KEY_GOODS_ID to item.id)
             }
         })
 
