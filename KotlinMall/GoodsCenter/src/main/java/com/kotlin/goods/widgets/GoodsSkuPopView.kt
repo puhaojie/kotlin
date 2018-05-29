@@ -1,8 +1,7 @@
-package com.kotlin.goods.widget
+package com.kotlin.goods.widgets
 
 import android.app.Activity
 import android.content.Context
-import android.text.Editable
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View

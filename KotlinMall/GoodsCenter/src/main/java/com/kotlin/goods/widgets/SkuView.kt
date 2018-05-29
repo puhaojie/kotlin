@@ -1,4 +1,4 @@
-package com.kotlin.goods.widget
+package com.kotlin.goods.widgets
 
 import android.content.Context
 import android.util.AttributeSet

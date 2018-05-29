@@ -26,12 +26,11 @@ import com.kotlin.goods.injection.module.GoodsModule
 import com.kotlin.goods.presenter.GoodsDetailPresenter
 import com.kotlin.goods.presenter.view.GoodsDetailView
 import com.kotlin.goods.ui.activity.GoodsDetailActivity
-import com.kotlin.goods.widget.GoodsSkuPopView
+import com.kotlin.goods.widgets.GoodsSkuPopView
 import com.youth.banner.BannerConfig
 import com.youth.banner.Transformer
 import kotlinx.android.synthetic.main.fragment_goods_detail_tab_one.*
 import org.jetbrains.anko.contentView
-import org.jetbrains.anko.support.v4.toast
 
 /*
     商品详情Tab One

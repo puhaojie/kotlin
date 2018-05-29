@@ -10,15 +10,15 @@ import com.kotlin.goods.ui.fragment.GoodsDetailTabTwoFragment
 /*
     商品详情ViewPager Adapter
  */
-class GoodsDetailVpAdapter(fm:FragmentManager,context:Context)
-    :FragmentPagerAdapter(fm) {
+class GoodsDetailVpAdapter(fm: FragmentManager, context: Context)
+    : FragmentPagerAdapter(fm) {
 
-    private val titles = arrayOf("商品","详情")
+    private val titles = arrayOf("商品", "详情")
 
     override fun getItem(position: Int): Fragment {
-        return if (position == 0){
+        return if (position == 0) {
             GoodsDetailTabOneFragment()
-        }else{
+        } else {
             GoodsDetailTabTwoFragment()
         }
     }
