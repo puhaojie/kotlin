@@ -6,7 +6,7 @@
         android:supportsRtl="true">
 
         <activity android:name=".ui.activity.OrderConfirmActivity"/>
-
+        <activity android:name=".ui.activity.ShipAddressActivity"/>
     </application>
 
 
