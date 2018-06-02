@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Kotlin:war">
+    <output-path>$PROJECT_DIR$/Kotlin/target</output-path>
+    <root id="archive" name="Kotlin_Server.war">
+      <element id="artifact" artifact-name="Kotlin:war exploded" />
+    </root>
+  </artifact>
+</component>
