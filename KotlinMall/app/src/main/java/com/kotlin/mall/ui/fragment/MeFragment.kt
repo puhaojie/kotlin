@@ -10,12 +10,18 @@ import com.kotlin.base.ui.fragment.BaseFragment
 import com.kotlin.base.utils.AppPrefsUtils
 import com.kotlin.mall.R
 import com.kotlin.mall.ui.activity.SettingActivity
+import com.kotlin.order.common.OrderConstant
+import com.kotlin.order.common.OrderStatus
+import com.kotlin.order.ui.activity.OrderActivity
+import com.kotlin.order.ui.activity.ShipAddressActivity
 import com.kotlin.provider.common.ProviderConstant
+import com.kotlin.provider.common.afterLogin
 import com.kotlin.provider.common.isLogined
 import com.kotlin.user.ui.activity.LoginActivity
 import com.kotlin.user.ui.activity.UserInfoActivity
 import kotlinx.android.synthetic.main.fragment_me.*
 import org.jetbrains.anko.support.v4.startActivity
+import org.jetbrains.anko.support.v4.toast
 
 /**
  * create by phj at 2018-05-24
@@ -80,10 +86,34 @@ class MeFragment : BaseFragment(), View.OnClickListener {
     override fun onClick(view: View) {
 
         when(view.id){
-            R.id.mUserIconIv,R.id.mUserNameTv->{
-                if (!isLogined()) {
-                    startActivity<LoginActivity>()
+            R.id.mUserIconIv, R.id.mUserNameTv -> {
+                afterLogin {
+                    startActivity<UserInfoActivity>()
                 }
+            }
+
+            R.id.mWaitPayOrderTv -> {
+                startActivity<OrderActivity>(OrderConstant.KEY_ORDER_STATUS to OrderStatus.ORDER_WAIT_PAY)
+            }
+            R.id.mWaitConfirmOrderTv -> {
+                startActivity<OrderActivity>(OrderConstant.KEY_ORDER_STATUS to OrderStatus.ORDER_WAIT_CONFIRM)
+            }
+            R.id.mCompleteOrderTv -> {
+                startActivity<OrderActivity>(OrderConstant.KEY_ORDER_STATUS to OrderStatus.ORDER_COMPLETED)
+            }
+            R.id.mAllOrderTv -> {
+                afterLogin {
+                    startActivity<OrderActivity>()
+                }
+            }
+
+            R.id.mAddressTv -> {
+                afterLogin {
+                    startActivity<ShipAddressActivity>()
+                }
+            }
+            R.id.mShareTv -> {
+                toast(R.string.coming_soon_tip)
             }
             R.id.mSettingTv -> {
                 startActivity<SettingActivity>()

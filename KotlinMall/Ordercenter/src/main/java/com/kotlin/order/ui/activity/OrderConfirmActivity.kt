@@ -32,13 +32,12 @@ import org.jetbrains.anko.toast
  * 简介：订单确认界面
  */
 @Route(path = RouterPath.OrderCenter.PATH_ORDER_CONFIRM)
-class OrderConfirmActivity : BaseMvpActivity<OrderConfirmPresenter>(),OrderConfirmView{
-
+class OrderConfirmActivity : BaseMvpActivity<OrderConfirmPresenter>(), OrderConfirmView {
 
 
     @Autowired(name = ProviderConstant.KEY_ORDER_ID)
     @JvmField
-    var mOrderId:Int = 0
+    var mOrderId: Int = 0
 
     private lateinit var mAdapter: OrderGoodsAdapter
     private var mCurrentOrder: Order? = null
@@ -88,8 +87,7 @@ class OrderConfirmActivity : BaseMvpActivity<OrderConfirmPresenter>(),OrderConfi
      */
     private fun initObserve() {
         Bus.observe<SelectAddressEvent>()
-                .subscribe{
-                    t: SelectAddressEvent ->
+                .subscribe { t: SelectAddressEvent ->
                     run {
                         mCurrentOrder?.let {
                             it.shipAddress = t.address
@@ -105,14 +103,14 @@ class OrderConfirmActivity : BaseMvpActivity<OrderConfirmPresenter>(),OrderConfi
      */
     private fun updateAddressView() {
         mCurrentOrder?.let {
-            if (it.shipAddress == null){
+            if (it.shipAddress == null) {
                 mSelectShipTv.setVisible(true)
                 mShipView.setVisible(false)
-            }else{
+            } else {
                 mSelectShipTv.setVisible(false)
                 mShipView.setVisible(true)
 
-                mShipNameTv.text = it.shipAddress!!.shipUserName + "  "+
+                mShipNameTv.text = it.shipAddress!!.shipUserName + "  " +
                         it.shipAddress!!.shipUserMobile
                 mShipAddressTv.text = it.shipAddress!!.shipAddress
             }
@@ -145,8 +143,8 @@ class OrderConfirmActivity : BaseMvpActivity<OrderConfirmPresenter>(),OrderConfi
     override fun onSubmitOrderResult(result: Boolean) {
         toast("订单提交成功")
         ARouter.getInstance().build(RouterPath.PaySDK.PATH_PAY)
-                .withInt(ProviderConstant.KEY_ORDER_ID,mCurrentOrder!!.id)
-                .withLong(ProviderConstant.KEY_ORDER_PRICE,mCurrentOrder!!.totalPrice)
+                .withInt(ProviderConstant.KEY_ORDER_ID, mCurrentOrder!!.id)
+                .withLong(ProviderConstant.KEY_ORDER_PRICE, mCurrentOrder!!.totalPrice)
                 .navigation()
         finish()
     }

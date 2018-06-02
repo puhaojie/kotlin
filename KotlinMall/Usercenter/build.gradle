@@ -57,7 +57,8 @@ dependencies {
 
     //Dagger2
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    //ARouter
+    kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
     compile project(':Provider')
 
 }

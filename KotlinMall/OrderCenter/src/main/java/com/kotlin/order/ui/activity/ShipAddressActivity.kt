@@ -11,6 +11,7 @@ import com.kotlin.base.ext.startLoading
 import com.kotlin.base.ui.activity.BaseMvpActivity
 import com.kotlin.base.ui.adapter.BaseRecyclerViewAdapter
 import com.kotlin.order.R
+import com.kotlin.order.common.OrderConstant
 import com.kotlin.order.data.protocol.ShipAddress
 import com.kotlin.order.event.SelectAddressEvent
 import com.kotlin.order.injection.component.DaggerShipAddressComponent
@@ -65,7 +66,7 @@ class ShipAddressActivity:BaseMvpActivity<ShipAddressPresenter>(),ShipAddressVie
             }
 
             override fun onEdit(address: ShipAddress) {
-//                startActivity<ShipAddressEditActivity>(OrderConstant.KEY_SHIP_ADDRESS to address)
+                startActivity<ShipAddressEditActivity>(OrderConstant.KEY_SHIP_ADDRESS to address)
 
             }
 
