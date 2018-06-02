@@ -22,8 +22,18 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-    }
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
 
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : "com.kotlin.mall",
+                JPUSH_APPKEY : "7f3d74ec9161e033d723f585", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -44,6 +54,7 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     //ARouter
     kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
-
+    compile 'cn.jiguang.sdk:jpush:3.0.9'  // 此处以JPush 3.0.9 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.7'  // 此处以JCore 1.1.7 版本为例。
 }
 

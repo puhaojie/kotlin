@@ -23,19 +23,19 @@ class BottomNavBar @JvmOverloads constructor(
 
     init {
         //首页
-        val homeItem = BottomNavigationItem(R.drawable.btn_nav_home_press,resources.getString(R.string.nav_bar_home))
+        val homeItem = BottomNavigationItem(R.drawable.btn_nav_home_press, resources.getString(R.string.nav_bar_home))
                 .setInactiveIconResource(R.drawable.btn_nav_home_normal)
                 .setActiveColorResource(R.color.common_blue)
                 .setInActiveColorResource(R.color.text_normal)
 
         //分类
-        val categoryItem = BottomNavigationItem(R.drawable.btn_nav_category_press,resources.getString(R.string.nav_bar_category))
+        val categoryItem = BottomNavigationItem(R.drawable.btn_nav_category_press, resources.getString(R.string.nav_bar_category))
                 .setInactiveIconResource(R.drawable.btn_nav_category_normal)
                 .setActiveColorResource(R.color.common_blue)
                 .setInActiveColorResource(R.color.text_normal)
 
         //购物车
-        val cartItem = BottomNavigationItem(R.drawable.btn_nav_cart_press,resources.getString(R.string.nav_bar_cart))
+        val cartItem = BottomNavigationItem(R.drawable.btn_nav_cart_press, resources.getString(R.string.nav_bar_cart))
                 .setInactiveIconResource(R.drawable.btn_nav_cart_normal)
                 .setActiveColorResource(R.color.common_blue)
                 .setInActiveColorResource(R.color.text_normal)
@@ -45,7 +45,7 @@ class BottomNavBar @JvmOverloads constructor(
         cartItem.setBadgeItem(mCartBadge)
 
         //消息
-        val msgItem = BottomNavigationItem(R.drawable.btn_nav_msg_press,resources.getString(R.string.nav_bar_msg))
+        val msgItem = BottomNavigationItem(R.drawable.btn_nav_msg_press, resources.getString(R.string.nav_bar_msg))
                 .setInactiveIconResource(R.drawable.btn_nav_msg_normal)
                 .setActiveColorResource(R.color.common_blue)
                 .setInActiveColorResource(R.color.text_normal)
@@ -55,7 +55,7 @@ class BottomNavBar @JvmOverloads constructor(
         msgItem.setBadgeItem(mMsgBadge)
 
         //我的
-        val userItem = BottomNavigationItem(R.drawable.btn_nav_user_press,resources.getString(R.string.nav_bar_user))
+        val userItem = BottomNavigationItem(R.drawable.btn_nav_user_press, resources.getString(R.string.nav_bar_user))
                 .setInactiveIconResource(R.drawable.btn_nav_user_normal)
                 .setActiveColorResource(R.color.common_blue)
                 .setInActiveColorResource(R.color.text_normal)
@@ -78,8 +78,8 @@ class BottomNavBar @JvmOverloads constructor(
     /**
      *  购物车消息显示功能
      */
-    fun checkCartBadge(count:Int){
-        if (count == 0){
+    fun checkCartBadge(count: Int) {
+        if (count == 0) {
             mCartBadge.hide()
         } else {
             mCartBadge.show()
@@ -91,10 +91,10 @@ class BottomNavBar @JvmOverloads constructor(
     /**
      *  消息标签显示
      */
-    fun checkMsgBadge(isVisible:Boolean){
-        if (isVisible){
+    fun checkMsgBadge(isVisible: Boolean) {
+        if (isVisible) {
             mMsgBadge.show()
-        }else {
+        } else {
             mMsgBadge.hide()
         }
     }

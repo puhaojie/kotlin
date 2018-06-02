@@ -11,7 +11,7 @@ import com.kotlin.base.injection.module.AppModule
  * create by phj at 2018-05-20
  * 简介：
  */
-class BaseApplication : Application() {
+open class BaseApplication : Application() {
 
     lateinit var appComponent: AppComponent
 
